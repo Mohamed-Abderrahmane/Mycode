@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block header %}
+    <script defer src={{ url_for('static', filename='index.js') }}></script>
+{% endblock %}
+
+{% block content %}
+    <div class="select_file">
+        <form method="post" enctype="multipart/form-data" class="select_file_form">
+            <div class="choose_file">
+                <label class='file_label' for="file_input">Choisir les fichiers</label>
+                <input type="file" id="file_input" name="file" multiple>
+            </div>
+            <div class="send_file">
+                <button class="send_file_btn">Envoyer</button>
+            </div>
+        </form>
+        <div class="uploaded_files_names">
+        </div>
+    </div>
+
+{% endblock %}

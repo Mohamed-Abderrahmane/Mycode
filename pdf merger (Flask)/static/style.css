@@ -1,0 +1,253 @@
+/************************************************* SOMMAIRE ************************************************/
+
+
+/* 
+    1 - VAR
+            Toutes les variables
+    2 - GENERAL : 
+            Elements communs à toute les pages
+    3 - INDEX
+            Elements relatif à la page d'index
+    4 - UPLOAD
+            Elements relatif à la page d'upload
+*/
+
+
+/************************************************* VAR ************************************************/
+
+:root {
+    --neutral_color_10 : #18181B;
+    --neutral_color_9 :#27272A;
+    --neutral_color_8 :#3F3F46;
+    --neutral_color_7 :#52525B;
+    --neutral_color_6 :#71717A;
+    --neutral_color_5 :#A1A1AA;
+    --neutral_color_4 :#D4D4D8;
+    --neutral_color_3 :#E4E4E7;
+    --neutral_color_2 :#F4F4F5;
+    --neutral_color_1 : #FAFAFA;
+
+
+    --primary_color_10 : #40436f;
+    --primary_color_9 : #4e5288;
+    --primary_color_8 : #6267aa;
+    --primary_color_7 : #757bcc;
+    --primary_color_6 : #8289e3;
+    --primary_color_5 : #a8aceb;
+    --primary_color_4 : #cdd0f4;
+    --primary_color_3 : #e0e2f8;
+    --primary_color_2 : #f3f3fc;
+    --primary_color_1 : #f9f9fe;
+
+
+    --box_shadow_5 : 0 20px 40px rgba(0, 0, 0, 0.2);
+    --box_shadow_4 : 0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.5);
+    --box_shadow_3 : 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.10);
+    --box_shadow_2 : 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+    --box_shadow_1 : 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+
+/************************************************* GENERAL ************************************************/
+
+
+*{
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100vh;
+    width: 100vw;
+    background-color : var(--neutral_color_1);
+    color : var(--neutral_color_6);
+}
+
+.main {
+    width : 100%;
+    height : 100%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary_color_2);
+}
+
+
+/************************************************* INDEX ************************************************/
+
+
+.select_file_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choose_file {
+    display : flex;
+    margin-right: 20px;
+}
+
+.file_label {
+    cursor : pointer;
+    padding : 18px;
+    background-color: var(--primary_color_7);
+    border-radius: 14px;
+    color : var(--neutral_color_3);
+    font-size : 20px;
+    box-shadow: var(--box_shadow_2);
+    transition : all 0.3s;
+}
+
+.file_label:hover {
+    background-color: var(--primary_color_8);
+    box-shadow: var(--box_shadow_1);
+}
+
+#file_input {
+    display: none;
+}
+
+.send_file_btn {
+    border : 2px solid var(--primary_color_7);
+    border-radius: 12px;
+    padding : 10px;
+    background-color: transparent;
+    color : var(--primary_color_7);
+    font-size : 16px;
+    cursor : pointer;
+    transition : all 0.3s;
+}
+
+.send_file_btn:hover {
+    background-color: var(--primary_color_3);
+}
+
+.uploaded_files_names {
+    padding : 20px;
+}
+
+.uploaded_file_name {
+    padding : 12px;
+    border-bottom: 2px solid var(--neutral_color_3);
+    color : var(--neutral_color_6);
+}
+
+.uploaded_file_name:last-child {
+    border-bottom: none;
+}
+
+
+/************************************************* UPLOAD ************************************************/
+
+
+.uploaded_files{
+    display : flex;
+    flex-direction: column;
+    border-radius : 13px;
+    box-shadow: var(--box_shadow_3);
+    overflow: hidden;
+}
+
+.uploaded_files_header {
+    font-size : 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color : var(--primary_color_3);
+    background-color: var(--primary_color_7);
+    padding : 40px;
+}
+
+.uploaded_files_body {
+    padding : 30px 80px;
+}
+
+.draggables {
+    display :flex;
+    flex-direction: column;
+}
+
+.draggables li {
+    display : flex;
+    align-items: center;
+    border-bottom: 2px solid var(--neutral_color_3);
+}
+
+.draggables li:last-child {
+    border-bottom : none;
+}
+
+.file_position {
+    color : var(--primary_color_7);
+    font-size : 20px;
+    padding : 0 14px;
+}
+
+.draggable {
+    flex-grow: 1;
+    padding : 20px;
+    cursor: pointer;
+}
+
+.draggable:hover {
+    color : var(--primary_color_6);
+    background-color: var(--primary_color_3);
+    border-radius : 2px;
+}
+
+.over {
+    color : var(--primary_color_8);
+    background-color: var(--primary_color_5);
+    border-radius : 2px;
+}
+
+.uploaded_files_footer {
+    padding : 0 25px 25px 25px;
+}
+
+#merge_btn {
+    cursor : pointer;
+    position: relative;
+    width : 100%;
+    padding : 15px 0;
+    background-color: var(--primary_color_7);
+    border-radius: 12px;
+    color : var(--neutral_color_3);
+    font-size : 16px;
+    box-shadow: var(--box_shadow_2);
+    transition : all 0.3s;
+    border : none;
+}
+
+#merge_btn:hover {
+    background-color: var(--primary_color_8);
+    box-shadow: var(--box_shadow_1);
+}
+
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}

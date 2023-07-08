@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block header %}
+    <script defer src={{ url_for('static', filename='upload.js') }}></script>
+{% endblock %}
+
+{% block content %}
+    <div class="uploaded_files">
+        <div class="uploaded_files_header">Ordonner les documents</div>
+        <div class="uploaded_files_body">
+            <ul class="draggables" id="files_container">
+                {% for file in files %}
+                    <li>
+                        <span class="file_position">{{ loop.index }}</span>
+                        <div class="file draggable" draggable="true">{{ file.filename }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="uploaded_files_footer">
+            <button id="merge_btn">Fusionner</button>
+        </div>
+    </div>
+
+{% endblock %}
+
